@@ -2,6 +2,8 @@
 Projet 6 "Participation à la vie de la communauté Open Source" du parcours Administrateur Infrastructure &amp; Cloud d'OpenClassrooms
 par Vivien HAVARD
 
+Nous portons à l'intention du lecteur la mise à disposition d'une documentation technique rentrant dans les détails sur le projet, les choix et la rédaction de notre script consultable dans notre répertoire GitHub : Documentation_technique.pdf
+
 ## Présentation du fonctionnement de notre script
 L'objectif de ce projet est de proposer un script qui permet d'automatiser la configuration DHCP et DNS d'un serveur sous Linux Ubuntu rapidement.
 
