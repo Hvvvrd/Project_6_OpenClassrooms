@@ -1,7 +1,7 @@
 # Project_6_OpenClassrooms
 Projet 6 "Participation à la vie de la communauté Open Source" du parcours Administrateur Infrastructure &amp; Cloud d'OpenClassrooms
-
-##Présentation
+Par Vivien HAVARD
+## Présentation
 L'objectif de ce projet est de proposer un script qui permet d'automatiser la configuration DHCP et DNS d'un serveur sous Linux Ubuntu rapidement.
 
 Ce script propose deux modes de lancement :
