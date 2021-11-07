@@ -7,17 +7,22 @@ import os
 from socket import *
 import yaml
 import os.path
-import configparser # Permet de parser le fichier de paramètres
+import configparser
 
+###################################################
+###########Partie complétion des éléments #########
+###################################################
 
-###########	remplace des éléments	###########
 def replaceAll(file,searchExp,replaceExp):
     for line in fileinput.input(file, inplace=1):
         if searchExp in line:
             line = line.replace(searchExp,replaceExp)
         sys.stdout.write(line)
 
-###########	DHCP	###########
+###################################################
+###########Partie configuration du DHCP	###########
+###################################################
+
 def dhcp_conf(server_name,subnet_mask,domain,option_dns,sous_res,interfaces):
 	os.system("apt-get install isc-dhcp-server")
 
@@ -33,7 +38,6 @@ def dhcp_conf(server_name,subnet_mask,domain,option_dns,sous_res,interfaces):
 	fichier.write("\ndefault-lease-time 3600;")
 	fichier.write("\nmax-lease-time 7200;")
 	fichier.write("\nlog-facility local7;\n")
-###########	sous reseaux	###########
 	fichier.write("\n##### RÉSEAUX #####\n")
 	fichier.write("\n## Déclaration sous réseaux")
 
@@ -65,7 +69,10 @@ def dhcp_conf(server_name,subnet_mask,domain,option_dns,sous_res,interfaces):
 	replaceAll("/etc/default/isc-dhcp-server","INTERFACESv4=\"\"","INTERFACESv4=\""+interfaces+"\"")
 	os.system("service isc-dhcp-server restart")
 
-###########	DNS	###########
+###################################################
+########### Partie configuration du DNS	###########
+###################################################
+
 def dns_conf(domain,ip):
 	os.system("apt-get install bind9")
 	os.system("cp /etc/bind/db.local /etc/bind/"+domain)
@@ -89,7 +96,10 @@ def dns_conf(domain,ip):
 	f.close()
 	os.system("service bind9 restart")
 
+###################################
 ###########	main	###########
+###################################
+
 def main(argv):
 
    domain = ''
@@ -126,11 +136,11 @@ def main(argv):
       elif opt in ("-i", "--i"):
          domain = input("Entrez le nom de domaine : ")
          ip = input("Entrez l'ip du serveur dns : ")
-         server_name = input("Entrez le nom du serveur DHCP (ex : dns.ubuntu-fr.lan) : ") 
+         server_name = input("Entrez le nom du serveur DHCP : ") 
          subnet_mask = input("Entrez le masque : ")
-         option_dns = input("Entrez les options dns (si plusieurs mettez ceci ', ' entre les ip, ex : 1.1.1.1, 2.2.2.2) : ")
+         option_dns = input("Entrez les options dns : ")
          sous_res=int(input("Entrez le nombre de sous réseaux : "))
-         interfaces=input("Entrez les interfaces d'écoute (ex si plusieurs ens33 ens34) : ")
+         interfaces=input("Entrez les interfaces d'écoute : ")
    dns_conf(domain,ip)
    dhcp_conf(server_name,subnet_mask,domain,option_dns,sous_res,interfaces)
 
