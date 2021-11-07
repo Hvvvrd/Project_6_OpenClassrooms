@@ -48,8 +48,10 @@ Si nous reprenons notre exemple pour 2 sous-réseaux, lors de l'exécution du mo
   
 ## Contexte et scénario de notre projet OpenClassrooms
 
+La démonstration de notre projet pour OpenClassrooms se déroule sur une maquette GNS3 qui nous permet de simuler l'architecture réseau décrite ci-dessous.
+
 Nous disposons de trois salles informatiques : 
-La salle Cacao  qui fait se compose de notre serveur d'administration "srv_cacao" de notre réseau faisant office de serveur DHCP et DNS. Se trouve dans cette salle notre modem Internet et un poste de travail.
+La salle Cacao  qui se compose de notre serveur d'administration "srv_cacao" de notre réseau faisant office de serveur DHCP et DNS. Se trouve dans cette salle notre modem Internet et un poste de travail.
 La salle Abeille composée d'un ensemble de poste de travail administrés depuis Cacao.
 La salle Baobab qui comme la salle Abeille est simplement composé d'un ensemble de poste de travail administrés depuis Cacao.
 
