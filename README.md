@@ -49,11 +49,14 @@ Si nous reprenons notre exemple pour 2 sous-réseaux, lors de l'exécution du mo
 ## Contexte et scénario de notre projet OpenClassrooms
 
 Nous disposons de trois salles informatiques : 
-La salle Cacao  qui fait se compose de notre serveur d'administration de notre réseau faisant office de serveur DHCP et DNS. Se trouve dans cette salle notre modem Internet et un poste de travail.
+La salle Cacao  qui fait se compose de notre serveur d'administration "srv_cacao" de notre réseau faisant office de serveur DHCP et DNS. Se trouve dans cette salle notre modem Internet et un poste de travail.
 La salle Abeille composée d'un ensemble de poste de travail administrés depuis Cacao.
 La salle Baobab qui comme la salle Abeille est simplement composé d'un ensemble de poste de travail administrés depuis Cacao.
 
-Notre infrastructure se compose d'un réseau principal « Cacao » en 192.168.10.0/24 et des sous-réseaux propres aux salles « Abeille » en 192.168.100.0/24 et « Baobab » en 192.168.101.0/24.
+Notre infrastructure se compose d'un réseau principal « Cacao » en 192.168.10.0/24 et des sous-réseaux propres aux salles « Abeille » en 192.168.100.0/24 et « Baobab » en 192.168.101.0/24. Notre script_config_dhcp_dns.py se situe sur "srv_cacao" à la racine avec res.ini et l'exécutons avec la commande :
+```
+sudo python script_config_dhcp_dns.py -d mon-entreprise.fr -a 192.168.10.10 -n srvlinux -m 255.255.255.0 -o srvlinux.mon-entreprise.fr -r 3 --interfaces="enp0s3 enp0s8 enp0s9"
+```
 
 ![image](https://user-images.githubusercontent.com/72630371/140648992-7f93148b-fcbc-4f9c-9b35-9d27138ee03c.png)
 
