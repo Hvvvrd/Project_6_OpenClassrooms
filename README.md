@@ -1,7 +1,8 @@
 # Project_6_OpenClassrooms
 Projet 6 "Participation à la vie de la communauté Open Source" du parcours Administrateur Infrastructure &amp; Cloud d'OpenClassrooms
-Par Vivien HAVARD
-## Présentation
+par Vivien HAVARD
+
+## Présentation du fonctionnement de notre script
 L'objectif de ce projet est de proposer un script qui permet d'automatiser la configuration DHCP et DNS d'un serveur sous Linux Ubuntu rapidement.
 
 Ce script propose deux modes de lancement :
@@ -43,4 +44,4 @@ pool: 10.0.0.2 10.0.0.254
 ```
 A noter, si nous prenons notre exemple pour 2 sous-réseaux, que lors de l'exécution du mode argument de notre script, l'argument -r <nombre de sous-réseaux> sera donc -r 2.
   
-##Fonctionnement 
+
