@@ -46,4 +46,14 @@ pool: 10.0.0.2 10.0.0.254
 ```
 Si nous reprenons notre exemple pour 2 sous-réseaux, lors de l'exécution du mode argument de notre script, l'argument -r <nombre de sous-réseaux> sera donc -r 2.
   
+## Contexte et scénario de notre projet OpenClassrooms
+
+Nous disposons de trois salles informatiques : 
+La salle Cacao  qui fait se compose de notre serveur d'administration de notre réseau faisant office de serveur DHCP et DNS. Se trouve dans cette salle notre modem Internet et un poste de travail.
+La salle Abeille composée d'un ensemble de poste de travail administrés depuis Cacao.
+La salle Baobab qui comme la salle Abeille est simplement composé d'un ensemble de poste de travail administrés depuis Cacao.
+
+Notre infrastructure se compose d'un réseau principal « Cacao » en 192.168.10.0/24 et des sous-réseaux propres aux salles « Abeille » en 192.168.100.0/24 et « Baobab » en 192.168.101.0/24.
+
+![image](https://user-images.githubusercontent.com/72630371/140648992-7f93148b-fcbc-4f9c-9b35-9d27138ee03c.png)
 
