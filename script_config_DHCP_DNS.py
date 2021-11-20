@@ -33,7 +33,7 @@ def dhcp_conf(server_name,subnet_mask,domain,option_dns,sous_res,interfaces):
 	fichier = open("/etc/dhcp/dhcpd.conf","w")
 	fichier.write("##### Option générale par défaut #####\n")
 	fichier.write("\n### RÉSEAU #####\n")
-	fichier.write("\nserver-name \""+server_name+"\";") #nom du serveur dns
+	fichier.write("\nserver-name \""+server_name+"\";") 
 	fichier.write("\nauthoritative;")
 	fichier.write("\noption subnet-mask "+subnet_mask+";")
 	fichier.write("\noption domain-name \""+ domain +"\";")
@@ -46,7 +46,7 @@ def dhcp_conf(server_name,subnet_mask,domain,option_dns,sous_res,interfaces):
 	fichier.write("\n## Déclaration sous réseaux")
 
 	interfaces= ''
-	config = configparser.RawConfigParser() # On créé un nouvel objet "config"
+	config = configparser.RawConfigParser()
 	config.read('dhcp_reseau.ini')
 
 	i=0
@@ -117,11 +117,11 @@ def main(argv):
    try:
       opts, args = getopt.getopt(argv,"hid:a:n:m:o:r:f:",["domain=","addr=","name=","mask=","optdns=","reseau=","interfaces="])
    except getopt.GetoptError:
-      print ('dhcp_dns.py -i pour le mode interactif ou dhcp_dns.py -d <domain> -a <addr ip> -n <server name> -m <subnet mask> -o <option dns> -r <nb sous res> --interfaces="interface1 interface2 or_more"')
+      print ('MODE INTERACTIF : dhcp_dns.py -i ou MODE ARGUMENTATION : dhcp_dns.py -d <domain> -a <@IP> -n <server name> -m <subnet mask> -o <option dns> -r <nombre sous-reseau> --interfaces="interface1 interface2 ou+"')
       sys.exit(2)
    for opt, arg in opts:
       if opt == '-h':
-         print ('dhcp_dns.py -i mode interactif ou dhcp_dns.py -d <domain> -a <addr ip> -n <server name> -m <subnet mask> -o <option dns> -r <nb sous res> --interfaces="interface1 interface2 or_more"')
+         print ('MODE INTERACTIF : dhcp_dns.py -i ou MODE ARGUMENTATION : dhcp_dns.py -d <domain> -a <@IP> -n <server name> -m <subnet mask> -o <option dns> -r <nombre sous-reseau> --interfaces="interface1 interface2 ou+"')
          sys.exit()
       elif opt in ("-d", "--domain"):
          domain = arg
