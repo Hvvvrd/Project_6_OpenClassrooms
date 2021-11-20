@@ -47,7 +47,7 @@ def dhcp_conf(server_name,subnet_mask,domain,option_dns,sous_res,interfaces):
 
 	interfaces= ''
 	config = configparser.RawConfigParser() # On créé un nouvel objet "config"
-	config.read('res.ini')
+	config.read('dhcp_reseau.ini')
 
 	i=0
 	for i in range(0,sous_res):
