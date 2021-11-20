@@ -10,7 +10,7 @@ L'objectif de ce projet est de proposer un script qui permet d'automatiser la co
 Ce script propose deux modes de lancement :
 ```
 - mode interactif : sudo script_config_dhcp_dns.py -i 
-- mode argument : sudo script_config_dhcp_dns.py -d <domain> -a <addr ip> -n <server name> -m <subnet mask> -o <option dns> -r <nombre de sous-réseaux> --interfaces=<"interface1 interface2 ..."> 
+- mode argument : sudo script_config_dhcp_dns.py -d <domain> -a <@IP> -n <server name> -m <subnet mask> -o <option dns> -r <nombre de sous-réseaux> --interfaces=<"interface1 interface2 ou+"> 
 ```
 La différence entre les deux modes étant que le mode argument la valeur des variables est mentionné directement dans les arguments tandis que, le mode interactif proposera de saisir les valeurs dans le terminal, au fur et à mesure, de la configuration du script, en réponse à une interaction avec l'utilisateur, sous-forme de questions. Pour cela, il suffira de saisir dans le terminal la valeur souhaitée et de faire « entrer ».
 
