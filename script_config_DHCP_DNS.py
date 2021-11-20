@@ -1,6 +1,10 @@
 #!/usr/bin/python
 #-*-coding: utf-8 -*
 
+#########################################
+########### Importation modules #########
+#########################################
+
 import sys, getopt
 import fileinput
 import os
