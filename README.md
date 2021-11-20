@@ -23,10 +23,10 @@ Les paramètres que nous retrouvons pour notre script_config_dhcp_dns.py sont :
 -n : rentrer votre nom de serveur dhcp (ex : ubuntu.lan)
 -m : rentrer votre masque pour le serveur (ex : 255.255.255.0)
 -o : rentrer les options dns (ex : 8.8.8.8, 1.1.1.1)
--r : rentrer le nombre de sous réseau que vous avez configuré dans le fichier res.ini
+-r : rentrer le nombre de sous réseau que vous avez configuré dans le fichier dhcp_reseau.ini
 --interfaces : rentrer vos interfaces d'écoute du serveur dhcp (ex : "enp0s3 enp0s8")
 ```
-Notre script_config_dhcp_dns.py est accompagné d'un second fichier : res.ini. Ce second fichier doit se trouver impérativement dans le même répertoire que script_config_dhcp_dns.py. Dedans, il sera déclarer nos sous-réseaux de la façons suivante, en prenant exemple ici pour 2 sous-réseaux :
+Notre script_config_dhcp_dns.py est accompagné d'un second fichier : dhcp_reseau.ini. Ce second fichier doit se trouver impérativement dans le même répertoire que script_config_dhcp_dns.py. Dedans, il sera déclarer nos sous-réseaux de la façons suivante, en prenant exemple ici pour 2 sous-réseaux :
 ```
 [reseau0]
 subnet: 10.0.0.0
